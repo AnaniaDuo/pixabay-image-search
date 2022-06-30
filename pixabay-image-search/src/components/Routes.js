@@ -14,8 +14,9 @@ function Routes() {
 
       <main>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
+          <Route exact path="/" component={About} />
+          <Route exact path="/about" component={About} />
+          <Route path="/home" component={Home} />
           <Route path="/images/:id" component={SingleImage} />
         </Switch>
       </main>

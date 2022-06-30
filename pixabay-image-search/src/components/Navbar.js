@@ -18,7 +18,7 @@ export default function App() {
     <>
       <MDBNavbar expand="lg" dark bgColor="dark">
         <MDBContainer fluid>
-          <MDBNavbarBrand href="#">ImageSearch</MDBNavbarBrand>
+          <MDBNavbarBrand href="/about">ImageSearch</MDBNavbarBrand>
           <MDBNavbarToggler
             type="button"
             data-target="#navbarColor02"
@@ -36,7 +36,7 @@ export default function App() {
               </MDBNavbarItem>
 
               <MDBNavbarItem className="active">
-                <MDBNavbarLink aria-current="page" href="/">
+                <MDBNavbarLink aria-current="page" href="/home">
                   Home
                 </MDBNavbarLink>
               </MDBNavbarItem>
