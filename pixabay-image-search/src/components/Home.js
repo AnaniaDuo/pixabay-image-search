@@ -9,24 +9,32 @@ export default function Home() {
   const [images, setImages] = useState([]);
   const handleChage = (evt) => {
     setText(evt.target.value);
-    console.log("text is now", text);
   };
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      const { data } = await axios.get(
-        `${apiBaseUrl}?key=${apiKey}&q=${text}&image_type=photo&safesearch=true`
-      );
-      setImages(data.hits);
-      console.log("data is ", images);
-      console.log(images.length);
-    };
-    fetchImages();
-  }, [text]);
+  // useEffect(() => {
+  //   const fetchImages = async () => {
+  //     try {
+  //       const { data } = await axios.get(
+  //         `${apiBaseUrl}?key=${apiKey}&q=${text}&image_type=photo&safesearch=true`
+  //       );
+  //       setImages(data.hits);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  //   fetchImages();
+  // }, [text]);
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
+    const { data } = await axios.get(
+      `${apiBaseUrl}?key=${apiKey}&q=${text}&image_type=photo&safesearch=true`
+    );
+    setImages(data.hits);
+  };
 
   return (
     <div>
-      <form className="d-flex input-group w-auto">
+      <form className="d-flex input-group w-auto" onSubmit={handleSubmit}>
         <input
           type="search"
           className="form-control"

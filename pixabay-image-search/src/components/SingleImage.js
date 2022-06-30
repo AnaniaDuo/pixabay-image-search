@@ -22,7 +22,6 @@ function SingleImage() {
           `${apiBaseUrl}?key=${apiKey}&id=${id}`
         );
         setSingleImage(data.hits);
-        console.log("data from singleImage", singleImage);
       } catch (err) {
         console.log(err);
       }

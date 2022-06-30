@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Images = (props) => {
   const { images } = props;
-  console.log("images in images is", images);
+
   return (
     <MDBRow className="row-cols-1 row-cols-md-2 g-4">
       {images.map((ele) => (
